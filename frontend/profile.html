@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .profile-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .profile-container h2 {
+            margin-bottom: 1.5rem;
+        }
+        .profile-container p {
+            margin: 0.5rem 0;
+        }
+        .profile-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+        }
+        .profile-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <p><strong>Username:</strong> johndoe</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+        <p><strong>Role:</strong> Student</p>
+        <button onclick="location.href='/edit-profile.html'">Edit Profile</button>
+        <button onclick="location.href='/logout.html'">Log Out</button>
+    </div>
+</body>
+</html>

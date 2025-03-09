@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .edit-profile-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .edit-profile-container h2 {
+            margin-bottom: 1.5rem;
+        }
+        .edit-profile-container input, .edit-profile-container select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .edit-profile-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .edit-profile-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-profile-container">
+        <h2>Edit Profile</h2>
+        <form>
+            <div>
+                <label>Username</label>
+                <input type="text" value="johndoe" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" value="johndoe@example.com" required>
+            </div>
+            <div>
+                <label>Role</label>
+                <select>
+                    <option selected>Student</option>
+                    <option>Lecturer</option>
+                    <option>Project Manager</option>
+                </select>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

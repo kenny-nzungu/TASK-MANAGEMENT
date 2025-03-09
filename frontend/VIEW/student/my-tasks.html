@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --light-blue: #e6f2ff;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--primary-blue);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .task-list {
+            margin-top: 20px;
+        }
+
+        .task-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-details {
+            flex-grow: 1;
+        }
+
+        .task-status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background-color: #f1c40f;
+            color: var(--white);
+        }
+
+        .status-completed {
+            background-color: #2ecc71;
+            color: var(--white);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>My Tasks</h1>
+        </header>
+
+        <div class="task-list">
+            <div class="task-item">
+                <div class="task-details">
+                    <h3>Project Management Assignment</h3>
+                    <p>Create a project timeline and risk assessment</p>
+                </div>
+                <span class="task-status status-pending">Pending</span>
+                <a href="submit-task.html" class="btn">Submit</a>
+            </div>
+
+            <div class="task-item">
+                <div class="task-details">
+                    <h3>Software Design Report</h3>
+                    <p>Design UML diagrams for system architecture</p>
+                </div>
+                <span class="task-status status-completed">Completed</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

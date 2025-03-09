@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Notifications</title>
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --light-blue: #e6f2ff;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --text-color: #2c3e50;
+            --gray-light: #f1f3f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--primary-blue);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .notifications-list {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid var(--light-blue);
+            transition: background-color 0.3s ease;
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-item:hover {
+            background-color: var(--light-blue);
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .notification-content {
+            flex-grow: 1;
+        }
+
+        .notification-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .notification-time {
+            color: #7f8c8d;
+            font-size: 0.8em;
+        }
+
+        .notification-badge {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+        }
+
+        .mark-read-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .mark-read-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        @media (max-width: 600px) {
+            .notification-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .mark-read-btn {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Notifications</h1>
+        </header>
+
+        <div class="notifications-list">
+            <div class="notification-item">
+                <div class="notification-icon">📅</div>
+                <div class="notification-content">
+                    <h3>New Task Deadline</h3>
+                    <p>Upcoming deadline for Software Engineering Project</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+                <div class="notification-badge">1</div>
+                <button class="mark-read-btn">Mark as Read</button>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">👥</div>
+                <div class="notification-content">
+                    <h3>Team Evaluation</h3>
+                    <p>New team performance report is available</p>
+                    <span class="notification-time">Yesterday</span>
+                </div>
+                <div class="notification-badge">2</div>
+                <button class="mark-read-btn">Mark as Read</button>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">📊</div>
+                <div class="notification-content">
+                    <h3>Report Generated</h3>
+                    <p>Student performance report for Q3 is ready</p>
+                    <span class="notification-time">3 days ago</span>
+                </div>
+                <button class="mark-read-btn">Mark as Read</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

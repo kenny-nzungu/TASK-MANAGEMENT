@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Settings</title>
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --light-blue: #e6f2ff;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --text-color: #2c3e50;
+            --gray-light: #f1f3f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--primary-blue);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--primary-blue);
+            text-align: center;
+        }
+
+        .settings-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .settings-section h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--primary-blue);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Task Management Settings</h1>
+        </header>
+
+        <div class="settings-section">
+            <h2>General Settings</h2>
+            <form>
+                <div class="form-group">
+                    <label for="system-name">Tool Name</label>
+                    <input type="text" id="system-name" class="form-control" placeholder="Enter tool name (e.g. University Task Manager)">
+                </div>
+
+                <div class="form-group">
+                    <label for="lecturer-name">Lecturer Name</label>
+                    <input type="text" id="lecturer-name" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="lecturer-email">Lecturer Email</label>
+                    <input type="email" id="lecturer-email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label>Enable Student Team Creation</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="team-creation">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Enable Task Assignment</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="task-assignment">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="max-team-size">Maximum Team Size</label>
+                    <input type="number" id="max-team-size" class="form-control" placeholder="Enter max number of students per team" min="1" max="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="project-deadline">Default Project Deadline</label>
+                    <input type="date" id="project-deadline" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="task-priority">Default Task Priority</label>
+                    <select id="task-priority" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Enable Teamwork Feedback</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="teamwork-feedback">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="items-per-page">Tasks Displayed Per Page</label>
+                    <input type="number" id="items-per-page" class="form-control" placeholder="Enter number of tasks per page" min="5" max="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Maintenance Mode</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="maintenance-mode">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Save Settings</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

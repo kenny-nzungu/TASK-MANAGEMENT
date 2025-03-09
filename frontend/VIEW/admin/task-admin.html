@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management - Admin</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text for readability */
+        }
+
+        /* Header */
+        header {
+            background-color: #007BFF; /* Blue header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #0056b3; /* Darker blue for navigation */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f0f8ff; /* Light blue for cards */
+            border: 1px solid #007BFF;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #007BFF; /* Blue for headings */
+        }
+
+        /* Table for Task List */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #007BFF;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        table tr:hover {
+            background-color: #f0f8ff; /* Light blue hover effect */
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #007BFF; /* Blue buttons */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007BFF; /* Blue footer */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Task Management - Admin</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="manage-users.html">Manage Users</a>
+        <a href="system-settings.html">System Settings</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Add New Task Section -->
+        <div class="card">
+            <h2>Add New Task</h2>
+            <form id="addTaskForm">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+
+                <label for="assignedTo">Assigned To:</label>
+                <select id="assignedTo" name="assignedTo" required>
+                    <option value="Student A">Student A</option>
+                    <option value="Student B">Student B</option>
+                    <option value="Student C">Student C</option>
+                </select>
+
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate" required>
+
+                <button type="submit" class="btn">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Task List Section -->
+        <div class="card">
+            <h2>Task List</h2>
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Assigned To</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Tasks -->
+                    <tr>
+                        <td>Complete Project Proposal</td>
+                        <td>Student A</td>
+                        <td>2023-10-15</td>
+                        <td>Pending</td>
+                        <td><button class="btn">Mark as Done</button></td>
+                    </tr>
+                    <tr>
+                        <td>Prepare Presentation</td>
+                        <td>Student B</td>
+                        <td>2023-10-20</td>
+                        <td>In Progress</td>
+                        <td><button class="btn">Mark as Done</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Task Management Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle adding new tasks
+        document.getElementById('addTaskForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const taskName = document.getElementById('taskName').value;
+            const assignedTo = document.getElementById('assignedTo').value;
+            const dueDate = document.getElementById('dueDate').value;
+
+            // Add new row to the table
+            const table = document.getElementById('taskTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.innerHTML = `
+                <td>${taskName}</td>
+                <td>${assignedTo}</td>
+                <td>${dueDate}</td>
+                <td>Pending</td>
+                <td><button class="btn">Mark as Done</button></td>
+            `;
+
+            // Clear the form
+            document.getElementById('addTaskForm').reset();
+        });
+    </script>
+</body>
+</html>

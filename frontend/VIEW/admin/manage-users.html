@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --light-blue: #e6f2ff;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --text-color: #2c3e50;
+            --gray-light: #f1f3f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--primary-blue);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .user-table {
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .user-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .user-table th, .user-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-blue);
+        }
+
+        .user-table th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+
+        .status-active {
+            background-color: #2ecc71;
+            color: var(--white);
+        }
+
+        .status-inactive {
+            background-color: #e74c3c;
+            color: var(--white);
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-filter input,
+        .search-filter select {
+            padding: 8px;
+            border: 1px solid var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .user-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>User Management</h1>
+            <div class="user-actions">
+                <a href="#" class="btn">Add User</a>
+                <a href="#" class="btn">Import Users</a>
+            </div>
+        </header>
+
+        <div class="search-filter">
+            <input type="text" placeholder="Search users..." style="flex-grow: 1;">
+            <select>
+                <option>All Roles</option>
+                <option>Students</option>
+                <option>Lecturers</option>
+                <option>Admins</option>
+            </select>
+            <select>
+                <option>Active Status</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+        </div>
+
+        <div class="user-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@university.edu</td>
+                        <td>Student</td>
+                        <td>
+                            <span class="status-badge status-active">Active</span>
+                        </td>
+                        <td>
+                            <a href="#" class="btn">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@university.edu</td>
+                        <td>Lecturer</td>
+                        <td>
+                            <span class="status-badge status-inactive">Inactive</span>
+                        </td>
+                        <td>
+                            <a href="#" class="btn">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

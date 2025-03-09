@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #007BFF, #0056b3);
+            color: #333;
+        }
+        .logout-container {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .logout-container h1 {
+            color: #007BFF;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .logout-container p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .logout-container button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .logout-container button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h1>You have been successfully logged out</h1>
+        <p>Thank you for visiting. We hope to see you again soon!</p>
+        <button onclick="location.href='login.html'">Log In Again</button>
+        <button onclick="location.href='index.html'">Go to Homepage</button>
+    </div>
+</body>
+</html>
